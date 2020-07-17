@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+</head>
+<body>	
+<form method="POST" >
+
+        <div style="margin: 0%;
+	    background-color: #2196F3">
+		<center><h1 style="color:white;">LOGIN</h1></center>
+    	</div>
+
+	{% block content %}
+    {% csrf_token %}
+    {% endblock %}
+    <br>
+    <center>
+	<label>Username</label><br>
+	<input type="text" name="uname"><br>	
+	<label>Password</label><br>
+	<input type="password" name="pass"><br><br>
+	<input type="submit" value="login" 
+	style=" border-radius: 2px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .6); 
+            background-color: #d35400;
+            color: #ecf0f1;
+            border: 2px solid #d35400;
+            font-size: 20px;">	
+	</center>
+	<br><br><br>
+</form>
+</body>
+</html>

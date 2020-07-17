@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>home</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+{% block content %}	
+<form id="logout" method="get">	
+<input type="submit" class="btn" value="logout" name="mybtn">
+</form>
+
+<div class="main">
+	<h1>Welcome Agent {{username}}</h1>
+	{% if a %}
+	<a href="/loginwork/log/adduser"><h2>add user</h2></a>
+	{% endif %}
+	<a href="/loginwork/log/addasset"><h2>add asset</h2></a>
+	<a href="/loginwork/log/addpurchase"><h2>add purchase</h2></a>
+	<a href="/loginwork/log/assets"><h2>all assets</h2></a>
+	<a href="/loginwork/log/purchases"><h2>purchase report</h2></a>
+<div>
+
+{% endblock %}  
+</body>
+</html>

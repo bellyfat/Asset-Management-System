@@ -1,0 +1,25 @@
+#logout
+{
+position:fixed;
+right:1px;
+top:1px;	
+}
+
+body
+{
+background-color:#cccccc;
+}
+#form
+{
+	margin-top:1%;
+    margin-left:40%;
+    margin-right:40%;
+    background-color: #e5e5e5;
+    font-weight: bolder;
+    font-family: cursive;
+    box-shadow: 0 20px 40px rgba(0,0,0,.2);
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}

@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>purchases</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+</head>
+<body>  
+{% block content %}
+{% csrf_token %}
+<form id="logout" method="get"> 
+<input type="submit" class="btn" value="logout" name="mybtn">
+</form> 
+<br><br><br>
+<table style="width: 100%" >
+  <tr>
+   <th>PURCHASE NO</th>
+   <th>SERIAL NO</th>
+   <th>WARRANTY START DATE</th>
+   <th>WARRANTY END DATE</th>
+   <th>VIEW ASSETS</th>
+  </tr>  
+    {% for i in a  %}
+    <tr>
+ 
+
+ <form method="get">
+      <td>{{ i.purchaseno }}</td>
+    <td><input type="text" name="serialno{{ i.purchaseno }}" value={{ i.serialno }}></td>
+    <td><input type="text" name="warrantystartdate{{ i.purchaseno }}" value={{ i.warrantystartdate }}></td>
+    <td><input type="text" name="warrantyenddate{{ i.purchaseno }}" value={{ i.warrantyenddate }}></td>
+    <td>
+      <input type="submit" name="peditbtn{{ i.purchaseno }}" value="edit" >
+      </form>
+       <form method="get">
+        <input type="submit" class="btn" value="view" name="btn{{ i.purchaseno }}">
+        <input type="submit" class="btn" value="delete" name="pdelbtn{{ i.purchaseno }}">
+        </form>
+    </td>
+    </tr>
+    {% endfor %}
+  
+</table>
+
+{% endblock %}
+</body>
+</html>

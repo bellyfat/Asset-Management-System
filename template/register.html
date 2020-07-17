@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>login</title>
+    <style type="text/css">
+        #logout
+        {
+        position:fixed;
+        right:1px;
+        top:1px;    
+        }
+    </style>
+</head>
+<body>
+<form id="logout" method="get">    
+<input type="submit" class="btn" value="logout" name="mybtn">
+</form>
+<form>         
+
+        <div style="margin: 0%;
+	    background-color: #673AB7;">
+		<center><h1 style="color:white;">LOGIN</h1></center>
+    	</div>
+
+
+
+	<!-- {% block content %}
+    {% csrf_token %}
+    {% endblock %}
+    --> <br>
+    <center>
+    <label>Username</label><br>	
+    <input type="Username" name="userconfirm"><br>	
+	<label>Password</label><br>
+	<input type="password" name="passconfirm"><br><br>	
+	<input type="submit" value="login" 
+	style=" border-radius: 2px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .6); 
+            background-color: #2ecc71;
+            color: #ecf0f1;
+            border: 2px solid #2ecc71;
+            font-size: 20px;">
+	</center>
+	<br><br><br>	
+</form>
+</body>
+</html>

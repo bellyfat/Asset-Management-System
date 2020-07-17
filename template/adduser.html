@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add user</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+</head>
+<body>	
+<form id="logout" method="get">	
+<input type="submit" class="btn" value="logout" name="mybtn">
+</form>	
+<form method="POST"  id="form" >
+
+        <div style="margin: 0%;
+	    background-color: #2196F3">
+		<center><h1 style="color:white;">ADD USER</h1></center>
+    	</div>
+
+
+
+	{% block content %}
+    {% csrf_token %}
+    {% endblock %}
+    <br>
+    <center>
+    <label>Name</label><br>
+	<input type="text" required name="name"><br>	
+	<label>Employee ID</label><br>
+	<input type="text" required name="employeeid"><br>	
+	<label>Email</label><br>
+	<input type="email" name="email"><br>
+	<label>Password</label><br>
+	<input type="password" name="pass"><br><br>	
+	<input type="submit" value="register" 
+	style=" border-radius: 2px;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .6); 
+            background-color: #d35400;
+            color: #ecf0f1;
+            border: 2px solid #d35400;
+            font-size: 20px;">	
+	</center>
+	<br><br><br>
+</form>
+</body>
+</html>

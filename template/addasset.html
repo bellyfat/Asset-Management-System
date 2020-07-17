@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>add asset</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+<form id="logout" method="get"> 
+<input type="submit" class="btn" value="logout" name="mybtn">
+</form> 
+
+    
+	<form id="form" method="POST" style="margin: 0;padding: 5px;">
+        
+    {% block content %}
+    {% csrf_token %}
+    {% endblock %}
+   <h1>Asset Description</h1>
+    <h3>HDD</h3>
+    <input type="text" required name="serialno1" placeholder="serialno">
+    <input type="text" name="ctno1" placeholder="ctno">
+    <input type="text" name="spno1" placeholder="spno">
+    <h3>MBD</h3>
+     <input type="text" required name="serialno2" placeholder="serialno">
+    <input type="text" name="ctno2" placeholder="ctno">
+    <input type="text" name="spno2" placeholder="spno">
+    <h3>SAS CARD</h3>
+     <input type="text" required name="serialno3" placeholder="serialno">
+    <input type="text" name="ctno3" placeholder="ctno">
+    <input type="text" name="spno3" placeholder="spno">
+    <h3>DVD RW DRIVE</h3>
+     <input type="text" required name="serialno4" placeholder="serialno">
+    <input type="text" name="ctno4" placeholder="ctno">
+    <input type="text" name="spno4" placeholder="spno">
+    <h3>GRAPHICS CARD</h3>
+     <input type="text" required name="serialno5" placeholder="serialno">
+    <input type="text" name="ctno5" placeholder="ctno">
+    <input type="text" name="spno5" placeholder="spno">
+    <h3>KEYBOARD</h3>
+     <input type="text" required name="serialno6" placeholder="serialno">
+    <input type="text" name="ctno6" placeholder="ctno">
+    <input type="text" name="spno6" placeholder="spno">
+    <h3>MOUSE</h3>
+     <input type="text" required name="serialno7" placeholder="serialno">
+    <input type="text" name="ctno7" placeholder="ctno">
+    <input type="text" name="spno7" placeholder="spno">
+    <h3>SMPS</h3>
+     <input type="text" required name="serialno8" placeholder="serialno">
+    <input type="text" name="ctno8" placeholder="ctno">
+    <input type="text" name="spno8" placeholder="spno">
+    <h3>MEMORY</h3>
+     <input type="text" required name="serialno9" placeholder="serialno">
+    <input type="text" name="ctno9" placeholder="ctno">
+    <input type="text" name="spno9" placeholder="spno">
+    <h3>CPU FAN</h3>
+     <input type="text" required name="serialno10" placeholder="serialno">
+    <input type="text" name="ctno10" placeholder="ctno">
+    <input type="text" name="spno10" placeholder="spno">
+    <h3>SYSTEM FAN</h3>
+     <input type="text" required name="serialno11" placeholder="serialno">
+    <input type="text" name="ctno11" placeholder="ctno">
+    <input type="text" name="spno11" placeholder="spno">
+    <h3>PROCESSOR</h3>
+     <input type="text" required name="serialno12" placeholder="serialno">
+    <input type="text" name="ctno12" placeholder="ctno">
+    <input type="text" name="spno12" placeholder="spno">
+    <h3>FRONT PANEL SWITCH</h3>
+     <input type="text" required name="serialno13" placeholder="serialno">
+    <input type="text" name="ctno13" placeholder="ctno">
+    <input type="text" name="spno13" placeholder="spno">
+    <h3>MONITOR</h3>
+     <input type="text" required name="serialno14" placeholder="serialno">
+    <input type="text" name="ctno14" placeholder="ctno">
+    <input type="text" name="spno14" placeholder="spno">
+
+<br><br><br><br><br><br><br>
+ <h1>asset details</h1>
+     <input type="text" required name="modelno" placeholder="modelno">
+    <input type="text" name="make" placeholder="make">
+    <input type="text" name="productno" placeholder="productno">
+<br><br>
+<input type="submit" name="submit">
+
+</form>
+<!--
+    MODEL NO
+    MAKE(EG:LENOVO) 
+    PRODUCT NO -->
+
+</body>
+</html>
+
+

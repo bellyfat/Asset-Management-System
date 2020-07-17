@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>add purchase</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/main2.css' %}">
+</head>
+<body>  
+<form id="logout" method="get"> 
+<input type="submit" class="btn" value="logout" name="mybtn">
+</form> 
+
+    
+<form method="POST"  id="form" >
+
+        <div style="margin: 0%;
+        background-color: #2196F3">
+        <center><h1 style="color:white;">ADD PURCHASE</h1></center>
+        </div>
+
+
+
+    {% block content %}
+    {% csrf_token %}
+    {% endblock %}
+   
+    <center id="form1">
+    <label>PURCHASE NO</label><br><br>
+    <input type="text" name="purchaseno"><br><br>    
+    <label>SERIAL NO</label><br><br>
+    <input type="text" name="serialno"><br><br>    
+    <label>WARRANTY START DATE</label><br><br>
+    <input type="text" name="startdate"><br><br>    
+    <label>WARRANTY END DATE</label><br><br>
+    <input type="text" name="enddate"><br><br>   
+    <label>NO OF ASSETS</label><br><br>
+    <input type="text" name="assets" id="id1"><br><br>
+    </center>
+    <br>
+</form>
+<script type="text/javascript" src="{% static 'styles/app.js' %}"></script>
+</body>
+</html>
+<!--     
+    
+    
+    
+    ASSETS
+ -->  

@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>elements</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+</head>
+<body>  
+{% block content %}
+{% csrf_token %}
+<form id="logout" method="get"> 
+<input type="submit" class="btn" value="logout" name="mybtn">
+</form> 
+<br><br><br>
+<table style="width: 100%" >
+  <tr>
+   <th>TYPE</th>
+   <th>SL NO</th>
+   <th>CT NO</th>
+   <th>SP NO</th>
+  </tr>
+ 
+  
+    {% for i in b  %}
+    <tr>
+    <td>{{ i.elementtype }}</td>
+    <td>{{ i.slno }}</td>
+    <td>{{ i.ctno }}</td>
+    <td>{{ i.spno }}</td>
+    </tr>
+    {% endfor %}
+  
+</table>
+
+{% endblock %}
+</body>
+</html>

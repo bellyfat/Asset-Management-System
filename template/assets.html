@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>assets</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/main.css' %}">
+</head>
+<body>
+{% block content %}
+{% csrf_token %}
+<form id="logout" method="get"> 
+<input type="submit" class="btn" value="logout" name="mybtn">
+</form> 
+<br><br><br>
+<table style="width: 100%" >
+  <tr>
+   <th>ASSET ID</th>
+   <th>MODEL NO</th>
+   <th>MAKE</th>
+   <th>PRODUCT NO</th>
+   <th>PURCHASE NO</th>
+   <th>VIEW</th>
+  </tr>
+  
+<!--     {% for i in a  %}
+    <tr>
+    <td>{{ i.id }}</td>
+    <td>{{ i.modelno }}</td>
+    <td>{{ i.make }}</td>
+    <td>{{ i.productno }}</td>
+    <td>{{ i.purchaseno }}</td>
+    <td><form method="get">
+        <input type="submit" class="btn" value="view" name="mybtn{{ i.id }}">
+        </form>
+    </td>
+    </tr>
+    {% endfor %}
+ -->  
+  <!-- {% csrf_token %} -->
+{% for i in a  %}
+    
+    <tr>
+      <form method="get">
+      
+    <td>{{ i.id }}</td>
+    <td><input type="text" name="modelno{{ i.modelno }}" value={{ i.modelno }}></td>
+    <td><input type="text" name="make{{ i.make }}" value={{ i.make }}></td>
+    <td><input type="text" name="productno{{ i.productno }}" value={{ i.productno }}></td>
+    <td><input type="text" name="purchaseno{{ i.purchaseno }}" value={{ i.purchaseno }}></td>
+    <td>
+      <input type="submit" name="aeditbtn{{ i.id }}" value="edit" >
+      </form>
+      <form method="get">
+        <input type="submit" class="btn" value="view" name="mybtn{{ i.id }}">
+        <input type="submit" class="btn" value="delete" name="adelbtn{{ i.id }}">
+        </form>
+    </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+{% endblock %}
+</body>
+</html>

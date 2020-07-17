@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>check</title>
+</head>
+<body>
+    {% block content %}
+    {% endblock %}
+    <form method="POST">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+     <a href="{% url 'demos-sessions' %}?action=logout">LogOut</a>
+</body>
+</html>
